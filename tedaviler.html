@@ -26,7 +26,39 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-	 <script  src="http://ir.sitekodlari.com/tarihvesaat1.js"></script>
+	 <script>
+
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+   year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+if (daym<10)
+   daym="0"+daym
+var dayarray=new Array("Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi")
+var montharray=new Array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık")
+
+myhours = mydate.getHours();
+if (myhours >= 12) {
+   myhours = (myhours == 12) ? 12 : myhours - 12; mm = " Akşam";
+}
+else {
+   myhours = (myhours == 0) ? 12 : myhours; mm = " Sabah";
+}
+
+myminutes = mydate.getMinutes();
+if (myminutes < 10){
+   mytime = ":0" + myminutes;
+}
+else {
+   mytime = ":" + myminutes;
+};
+
+document.write("<font color='black' face='Arial' size=2><b>" + myhours + mytime + mm + ", " + dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font>")
+
+</script>
   </head>
   <body>
 
